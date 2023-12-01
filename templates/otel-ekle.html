@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{%load static %}
+
+{% block title %}
+    <title>otel Ekle</title>
+{% endblock title %}
+
+{% block content %}
+
+<a href="{% url 'base' %}"><button  style="background-color: #003b95; margin-top: 10px; width: 22%; border-radius: 5px; font-size: 20px; height: 40px;">Anasayfa</button></a>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+{% for field in form %}
+
+    <div class="mt-4">
+        <div>
+            <label for="field.id_for_label">{{field.label}}</label>
+            {{field}}
+        </div>
+
+    </div>
+
+    
+{% endfor %}
+<a href="{% url 'detay1' %}"><input class="btn btn-success" type="submit" value="Kaydet"></a>
+
+</form>
+
+{% endblock content %}

@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Ödeme sayfası</title>
+{% endblock title %}
+
+{% block css %}
+        <link rel="stylesheet" href="{% static 'css/odeme.css' %}">
+{% endblock css %} 
+
+{% block script %}
+        <script src="{% static 'script/odeme.js' %}"></script>
+{% endblock script %}
+
+{% block content %}
+<a href="{%  url 'base' %}" ><button class="btn btn-primary">Booking.com</button></a>
+
+<div class="container" style="width: 100%;">
+    <div class="row mt-5">
+        <div class="col-md-7 mt-2 giris">
+            <div class="giris1">
+                <p>Kayıtlı bilgilerinizle rezervasyon yapmak için <span class="yazı"> giriş yapın </span> veya
+                    rezervasyonlarınızı hareket halindeyken yönetmek için <span class="yazı"> kaydolun </span> !</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7 bilgi">
+            <h3 style="margin: 1rem;">Bilgilerinizi girin</h3>
+            <div class="adsoyad">
+                <div class="adsoyad1">
+                    <label class="fw-bold" for="">Ad *</label>
+                    <form action="">
+                        <input type="text" size="30">
+                    </form>
+                </div>
+                <div class="adsoyad2">
+                    <label class="fw-bold" for="">Soyad *</label>
+                    <form action="">
+                        <input class="soyad" type="text" size="30">
+                    </form>
+                </div>
+            </div>
+            <div class="eposta">
+                <label class="fw-bold" for="">E-posta adresi *</label>
+                <form action="">
+                    <input class="email" type="email" size="40">
+                </form>
+            </div>
+            <div class="select">
+                <p class="fw-bold">Ülke/bölge</p>
+                <select id="countries" name="countries"></select>
+            </div>
+            <div class="telefon">
+                <label class="fw-bold" for="">Telefon (tercihen cep telefonu)</label>
+                <form action="">
+                    <input class="tel" type="tel" size="40" value="+90">
+                </form>
+                <p>Tesisin rezervasyonunuzu doğrulaması için gereklidir</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-7 standart">
+            <h4 style="margin: 1rem;">Standart Çift Kişilik Oda</h4>
+            <div class="d-flex iade">
+                <p class="fw-bold">* İade edilmez</p>
+                <i class="bi bi-question-circle"></i>
+            </div>
+            <div class="d-flex konuk">
+                <i class="fa-solid fa-children"></i>
+                <p class="fw-bold me-1">Konuk sayısı:2 Yetişkin</p>
+                <i class="bi bi-question-circle"></i>
+            </div>
+            <div class="d-flex tertemiz">
+                <i class="fa-solid fa-soap"></i>
+                <p>Tertemiz odalar - 10</p>
+            </div>
+            <div class="d-flex sigara">
+                <i class="fa-solid fa-ban-smoking"></i>
+                <p>Sigara içilmez</p>
+            </div>
+            <div class="d-flex kutu">
+                <p><i class="fa-solid fa-snowflake"></i>Klima</p>
+                <p><i class="fa-solid fa-shower"></i>Özel banyo</p>
+                <p><i class="bi bi-tv"></i>Düz ekran TV</p>
+                <p><i class="bi bi-volume-mute-fill"></i>Ses yalıtımı</p>
+                <p><i class="bi bi-cup-hot"></i>Kahve makinesi</p>
+                <p><i class="fa-solid fa-wine-glass"></i>Minibar</p>
+            </div>
+            <label class="fw-bold" for="">Konuğun adı ve soyadı</label>
+            <form action="">
+                <input class="konuk" type="text" size="40" placeholder="Ad, Soyadı">
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-7 özel">
+            <h4 style="margin: 1rem;">Özel İstekler/Notlar</h4>
+            <p>Özel talepler garanti edilemez ancak tesis, ihtiyaçlarınızı karşılamak için elinden geleni yapacaktır.</p>
+            <p>Rezervasyonunuz tamamlandıktan sonra istediğiniz zaman özel talep gönderebilirsiniz!</p>
+            <p class="fw-bold">Lütfen taleplerinizi İngilizce veya Fransızca yazın.</p>
+            <textarea class="area" name="" id="" cols="80" rows="5"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 odeme">
+            <a href="{% url 'payment' %}"><button class="odemebtn" style="width: 100%;">Ödeme Yap</button></a>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}

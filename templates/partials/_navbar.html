@@ -1,0 +1,88 @@
+{% load static %}
+
+<!-- ORGUN FURKAN BİRDAR START -->
+    <header class="header">
+        <div class="header_line_top">
+            <div class="logo">
+                <a href="{%  url 'base' %}">Booking.com</a>
+            </div>
+            <div class="connection">
+                <a class="currency" href="">TRY</a> <!--para birimi -->
+                <div class="country">
+                    <img src="https://icons.iconarchive.com/icons/iconscity/flags/16/turkey-icon.png" width="32"
+                        height="32">
+                </div>
+                <div class="question">
+                    <div class="questionInt">?</div>
+                </div>
+                
+                {% if user.is_authenticated %}
+                <!-- Kullanıcı giriş yapmışsa -->
+                <a href="{% url 'otel-ekle' %}"><div class="button_type2">Tesisinizi kaydedin</div></a>
+                Merhaba, {{ user.username }}!  <!-- buraya şekil verilecek -->
+                <a href="{% url 'cikis' %}"><div class="button_type3">Çıkış Yap</div></a>
+                {% else %}
+                <!-- Kullanıcı giriş yapmamışsa -->
+                <a href="{% url 'register' %}"><div class="button_type3">Kayıt Ol</div></a>
+                <a href="{% url 'login' %}"><div class="button_type3">Giriş Yap</div></a>
+                {% endif %}
+                
+            </div>
+        </div>
+
+        <nav>
+            <li>
+                <ul>
+                    <i class="fa-solid fa-bed"></i>
+                    Konaklama
+                </ul>
+                <ul>
+                    <i class="fa-solid fa-plane"></i>
+                    Uçak biletleri
+                </ul>
+                <ul>
+                    <i class="fa-solid fa-car"></i>
+                    Araba kiralama
+                </ul>
+                <ul>
+                    <i class="fa-solid fa-building-columns"></i>
+                    Turistik noktalar
+                </ul>
+                <ul>
+                    <i class="fa-solid fa-taxi"></i>
+                    Havaalanı taksileri
+                </ul>
+            </li>
+        </nav>
+    </header>
+
+    <!-- ORGUN FURKAN BİRDAR FINISH -->
+
+
+    <!-- EVREN OĞUL START -->
+    <div class="info">
+        <section>
+            <h1>Sıradaki Konaklamanızı Bulun</h1>
+            <div class="subtitle_h1">Oteller, evler ve çok daha fazlasındaki fırsatları arayın...</div>
+
+            <div class="search">
+                <input type="search" placeholder="Nereye gidiyorsunuz?">
+                <input type="date" placeholder="Tarih">
+                <input type="number" placeholder="2 yetişkin 2 çocuk 1 oda">
+                <a href="{%  url 'detay1' %}"><button style="height: 50px;">ARA</button></a>
+                
+            </div>
+
+            <div class="info_checkbox">
+                <input type="checkbox" name="" id="">
+                <p>Tamamı bana ait olan bir ev veya daire arıyorum</p>
+            </div>
+            <div class="info_checkbox">
+                <input type="checkbox" name="" id="">
+                <p>İş için seyahat ediyorum</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- EVREN OĞUL FINISH -->
+

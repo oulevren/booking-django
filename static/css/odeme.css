@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: auto;
+    width: 80%;
+}
+
+
+
+.giris{
+    height: 10vh;
+    display: flex;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+.yazı{
+    color: blue;
+}
+.giris1{
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+.bilgi{
+    /* height: 42vh; */
+    margin-top: 1rem;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+.adsoyad{
+    display: flex;
+}
+.adsoyad2{
+    margin-left: 3rem;
+}
+.eposta{
+    margin-top: 1rem;
+    display: block;
+    justify-content: center;
+}
+.telefon{
+    margin-top: 1rem;
+}
+.select{
+    margin-top: 1rem;
+}
+
+.standart{
+    /* height: 35vh; */
+    margin-top: 1rem;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+.iade i{
+    margin-left: 1rem;
+}
+.konuk i{
+    margin-right: 1rem;
+}
+.tertemiz i{
+    margin-right: 1rem;
+}
+.sigara i{
+    margin-right: 1rem;
+}
+.kutu p{
+    background-color: rgb(206, 246, 206);
+    border-radius: 5px;
+    border: 1px solid green;
+    margin-right: 0.3rem;
+}
+.özel{
+    /* height: 35vh; */
+    margin-top: 1rem;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+.odeme{
+    display: flex;
+    justify-content: end;
+}
+.odemebtn{
+    width: 40%;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(71, 71, 237);
+}
+
+@media screen and (max-width:767px) {
+    .adsoyad{
+        display: block;
+    }
+    .bilgi{
+        margin-top: 2rem;
+    }
+    .giris{
+        height: 20vh;
+    }
+    .bilgi{
+        height: 65vh;
+    }
+    .standart{
+        height: 60vh;
+        width: 100%;
+    }
+    .özel{
+        height: 66vh;
+    }
+    .area{
+        width: 80%;
+    }
+    #countries{
+        width: 70%;
+    }
+    .soyad{
+        width: 90%;
+    }
+    .kutu p{
+        margin: 0;
+    }
+    .email{
+        width: 80%;
+    }
+    .tel{
+        width: 80%;
+    }
+    .konuk{
+        width: 90%;
+    }
+}

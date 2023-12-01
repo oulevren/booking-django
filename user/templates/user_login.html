@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock css %}
+<header class="header">
+  <div class="header_line_top">
+    <div class="logo">
+      <a href="">Booking.com</a>
+    </div>
+    <div class="connection">
+      <div class="country">
+        <img src="https://icons.iconarchive.com/icons/iconscity/flags/16/turkey-icon.png" width="32" height="32" />
+      </div>
+      <div class="question">
+        <div class="questionInt">?</div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="register-section">
+    <div class="register-section-content">
+      <h4 class="register-section-content-header">Kayıtlı Hesabınızla Giriş Yapın</h4>
+      <form method="POST" class="register-form">
+        {% csrf_token %} {% if hata %}
+        <div class="alert alert-danger">{{hata}}</div>
+        {% endif %}
+        <div class="mb-2">
+          <label for="email" class="form-label"> E-Mail </label>
+          <input type="email" name="email" class="form-control" required />
+        </div>
+        <div class="mb-2">
+          <label for="parola" class="form-label"> Parola </label>
+          <input type="password" name="parola" class="form-control" required />
+        </div>
+        <button type="submit" value="Giriş Yap" class="btn btn-success">
+          Gönder
+        </button>
+      </form>
+      <!-- <button class="register-button">E-postayla devam et</button> -->
+      <div class="under-button-section">
+        <div></div>
+        <p>veya bu seçeneklerden birini kullan</p>
+        <div></div>
+      </div>
+      <div class="google-card-section">
+        <div class="google-card">
+          {% load socialaccount %}
+          <a href="{% provider_login_url 'google' %}?next=/"><i class="fa-brands fa-google fa-2x"></i></a>
+          <a href=""><i class="fa-brands fa-facebook fa-2x"></i></a>
+          <a href=""><i class="fa-brands fa-apple fa-2x"></i></a>
+        </div>
+        <div class="line"></div>
+        <span class="information-text">
+          Bir hesaba giriş yaparak ya da hesap oluşturarak
+          <a href="">Şartlar ve Koşullarımız</a> ile
+          <a href="">Gizlilik Bildirimimizi</a> kabul etmiş olursunuz
+        </span>
+        <div class="line"></div>
+        <span class="footer-text">Tüm hakları saklıdır.</span>
+        <span class="footer-text">Telif hakkı (2006 - 2023) - Booking.com™</span>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
