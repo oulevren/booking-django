@@ -7,6 +7,7 @@ from django.utils import timezone
 # Create your models here.
 
 class Otel(models.Model):
+    username=models.CharField
     title = models.CharField(max_length=50)
     adres = models.CharField(max_length=100,default='bir adres')
     image = models.ImageField(upload_to='tesis_images',null=True)
